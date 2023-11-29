@@ -63,7 +63,9 @@ class Program
         for (int i = 0; i < 5; i++)
         {
             Student student = new Student();
+            Console.WriteLine("введите имя");
             student.FirstName = Console.ReadLine();
+            Console.WriteLine("введите фамилию");
             student.LastName = Console.ReadLine();
             MyStack1.Push(student);
         }
@@ -77,11 +79,13 @@ class Program
             if (student == null)
                 return;
             else
-            {
-                int mark = 0;
-                student.Mark = Console.Read();
-                student.Mark = mark;
+            {;
+                Console.WriteLine("введите оценку");
+                student.Mark = int.Parse(Console.ReadLine());
                 MyStack2.Push(student);
+                Console.WriteLine(student.FirstName);
+                Console.WriteLine(student.LastName);
+                Console.WriteLine(student.Mark);
             }
         }
         while (true);
