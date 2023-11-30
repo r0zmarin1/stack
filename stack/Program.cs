@@ -59,7 +59,7 @@ class Program
 {
     public static void Main()
     {
-        MyStack<Student> MyStack1 = new MyStack<Student>();
+        QStack<Student> Queue = new QStack<Student>();
         for (int i = 0; i < 5; i++)
         {
             Student student = new Student();
@@ -67,22 +67,22 @@ class Program
             student.FirstName = Console.ReadLine();
             Console.WriteLine("введите фамилию");
             student.LastName = Console.ReadLine();
-            MyStack1.Push(student);
+            Queue.Enqueue(student);
         }
 
 
-        MyStack<Student> MyStack2 = new MyStack<Student>();
+        QStack<Student> Queue1 = new QStack<Student>();
 
         do
         {
-            var student = MyStack1.Pop();
+            var student = Queue.Dequeue();
             if (student == null)
                 return;
             else
             {;
                 Console.WriteLine("введите оценку");
                 student.Mark = int.Parse(Console.ReadLine());
-                MyStack2.Push(student);
+                Queue1.Enqueue(student);
                 Console.WriteLine(student.FirstName);
                 Console.WriteLine(student.LastName);
                 Console.WriteLine(student.Mark);
